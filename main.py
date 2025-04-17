@@ -1,16 +1,20 @@
-# This is a sample Python script.
+import streamlit as st
+# NLP Pkgs
+from textblob import TextBlob
+from nltk.stem.wordnet import WordNetLemmatizer
+import re
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+st.title('Jakob\'s Sentiment Analysis Web App')
+st.subheader('Created By Jakob Danninger for Prof Jayapandian\'s CSDS237')
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+u_input = st.text_area("Add text for sentiment analysis", "")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+if st.button("Submit"):
+    def clean_text(text):
+        # clean stuff here with regex??
+        return text
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    cleaned_text = clean_text(u_input)
+    st.write(cleaned_text)
